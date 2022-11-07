@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)https://supermario-game.com/pl -->
+<html lang="pl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://supermario-game.com/static/images/favicon.ico">
+    
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+
+                <link rel="alternate" href="https://supermario-game.com/de" hreflang="de">
+                    <link rel="alternate" href="https://supermario-game.com/el" hreflang="el">
+                        <link rel="alternate" href="https://supermario-game.com/" hreflang="en">
+                    <link rel="alternate" href="https://supermario-game.com/es" hreflang="es">
+                    <link rel="alternate" href="https://supermario-game.com/fr" hreflang="fr">
+                    <link rel="alternate" href="https://supermario-game.com/it" hreflang="it">
+                    <link rel="alternate" href="https://supermario-game.com/nl" hreflang="nl">
+                    <link rel="alternate" href="https://supermario-game.com/pl" hreflang="pl">
+                    <link rel="alternate" href="https://supermario-game.com/pt" hreflang="pt">
+                    <link rel="alternate" href="https://supermario-game.com/ru" hreflang="ru">
+                    <link rel="alternate" href="https://supermario-game.com/tr" hreflang="tr">
+                    <link rel="alternate" href="https://supermario-game.com/vi" hreflang="vi">
+        
+<script data-ad-client="ca-pub-5363384967385648" async="" src="./PolskiMario_files/f.txt"></script>
+
+    <link rel="stylesheet" type="text/css" href="./PolskiMario_files/flag-icon.min.css">
+    <link rel="stylesheet" href="./PolskiMario_files/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="./PolskiMario_files/jquery-3.3.1.slim.min.js.pobrane" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="./PolskiMario_files/popper.min.js.pobrane" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="./PolskiMario_files/bootstrap.min.js.pobrane" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script>
+        var is_mobile = false;
+        var is_fullscreen = false;
+        var is_dev = false;
+    </script>
+
+    <style>
+        body {
+            font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
+        }
+        .layout {
+            max-width: 960px;
+        }
+        @media screen and (max-width: 425px) {
+            .layout {
+                width: 90% !important;
+            }
+        }
+        .description {
+            margin-top: 50px !important;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-bottom-color: rgba(0, 0, 0, 0.5);
+            border-bottom-width: 5px;
+        }
+        .lang-modal {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .lang-modal .link {
+            display: inline-block;
+            padding: 5px;
+        }
+        .fluid-heading {
+            font-size: 1.8rem;
+        }
+        @media screen and (max-width: 425px) {
+            .description img {
+                width: 100%;
+                float: none !important;
+                box-sizing: border-box;
+                display: block;
+                margin: 0 !important;
+            }
+        }
+        .language-list.show {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        @media screen and (max-width: 425px) {
+            .language-list.show {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .topbar__heading {
+            margin-right: 1rem;
+            text-align: center;
+        }
+        @media screen and (max-width: 770px) {
+            .topbar {
+                flex-direction: column;
+            }
+            .topbar__heading {
+                margin-right: 0;
+            }
+        }
+        .change-lang {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: capitalize;
+            margin: 1rem;
+        }
+        .change-lang:hover {
+            text-decoration: none;
+        }
+        .change-lang .flag-icon {
+            margin-right: 5px;
+            transform: translateY(1px);
+        }
+
+        @media screen and (max-width: 1270px) {
+            .dropdown { position: static ;}
+        }
+        .topbar__heading {
+            width: 100%;
+            text-align: center;
+        }
+        .topbar .dropdown {
+            float: right;
+            min-width: max-content;
+        }
+        header .d-flex {
+            flex-direction: column;
+        }
+        @media all and (max-width: 540px) {
+            .fluid-heading {
+                font-size: 1.6rem;
+            }
+            body.mt-2 {
+                margin-top: 0 !important;
+            }
+            .layout.pt-5 {
+                padding-top: 15px !important;
+            }
+            .change-lang {
+                margin: 0 1rem;
+            }
+            header div p {
+                line-height: 1.2;
+                margin-top: 8px !important;
+                margin-bottom: 5px !important;
+            }
+            #runner.mb-5.pb-5 {
+                padding-bottom: 0 !important;
+                margin-bottom: 30px !important;
+            }
+        }
+        .main-menu {
+            width: 100%;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .main-menu .divider {
+            display: inline-block;
+            width: 10px;
+            position: relative;
+            height: 12px;
+            margin: 0 10px;
+        }
+
+        .main-menu .divider:after {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 2px;
+            background-color: #212529;
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+
+        .main-menu a {
+            color: #212529;
+        }
+        .bd-placeholder-img {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 200px;
+        }
+
+        .bd-placeholder-img.mob {
+            height: 450px;
+        }
+
+        .card-text {
+            color: #212529;
+        }
+        .card {
+            margin-bottom: 15px;
+        }
+
+        @media all and (max-width: 540px) {
+            .bd-placeholder-img {
+                height: 150px;
+            }
+
+            .bd-placeholder-img.mob {
+                height: 320px;
+            }
+        }
+
+        @font-face {
+            font-family: 'Press Start';
+            src: url('/mario-game/Fonts/pressstart2p-webfont.eot');
+            src: url('/mario-game/Fonts/pressstart2p-webfont.eot?#iefix') format('embedded-opentype'), url('/mario-game/Fonts/pressstart2p-webfont.woff') format('woff'), url('/mario-game/Fonts/pressstart2p-webfont.ttf') format('truetype'), url('/mario-game/Fonts/pressstart2p-webfont.svg#press_start_2pregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Super Plumber Bros';
+            src: url('/mario-game/Fonts/super_plumber_brothers-webfont.eot');
+            src: url('/mario-game/Fonts/super_plumber_brothers-webfont.eot?#iefix') format('embedded-opentype'), url('/mario-game/Fonts/super_plumber_brothers-webfont.woff') format('woff'), url('/mario-game/Fonts/super_plumber_brothers-webfont.ttf') format('truetype'), url('/mario-game/Fonts/super_plumber_brothers-webfont.svg#super_plumber_brothersregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        #game {
+            background: #fff;
+            display: block;
+            width: 100%;
+            max-width: 848px;
+            height: 509px;
+            position: relative;
+            margin: 20px auto 10px;
+            border: 10px solid #fff;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        #game.mobilegame {
+            border: none;
+            max-width: 848px;
+            height: 528px;
+        }
+
+        body.fullscreen {
+            background-color: #000;
+        }
+
+        body.fullscreen #main {
+            max-width: 100%;
+        }
+
+        body.fullscreen #game {
+            max-width: 100%;
+            height: 500px;
+            border: none;
+            position: static;
+            margin: 0;
+        }
+
+        body.fullscreen #out_editor {
+            position: static;
+        }
+
+        body.fullscreen #sound-toggle {
+            width: 200px;
+            position: static;
+            margin: 10px auto;
+        }
+
+        body.fullscreen #out_mapselect {
+            position: static;
+        }
+
+        body.fullscreen #go-back {
+            position: static;
+        }
+
+        body.fullscreen #go-back a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        #after {
+            margin: 0 0 26px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 21px;font-family: "Press Start";text-transform: uppercase;line-height: 117%;
+        }
+
+        .bar1 {
+            cursor: pointer;
+            margin: 10px;
+            text-align: center;
+        }
+
+        #out_editor {
+        }
+
+        #out_mapselect {
+            color: #000;
+        }
+
+        #out_options {
+        }
+
+        #in_editor {
+            color: #000;
+        }
+
+        #out_keymapping {
+            margin: 7px auto;
+        }
+
+        #in_options {
+        }
+
+        #sound-toggle {
+            color: #000;
+        }
+
+        #sound-toggle:hover {
+            color: #a6ec5e;
+        }
+
+        #full-screen a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        #full-screen a:hover {
+            color: #a6ec5e;
+        }
+
+        #in_keymapping:hover {
+            height: 400px;
+        }
+
+        #in_keymapping input {
+            width: 80px;
+            margin-right: 20px;
+            float: right;
+            font-family: "Press Start";
+            text-transform: uppercase;
+        }
+
+        #in_keymapping input:focus {
+            background-color: #0099ff;
+        }
+
+        .expander {
+            padding: 7px;
+            width: 280px;
+            height: 24px;
+            display: none;
+            z-index: 98;
+            background: #009966;
+            border: 3px solid #99ffcc;
+            border-radius: 7px;
+            box-shadow: 0 3px 7px black inset;
+            font-size: 14px;
+            margin: 0 10px;
+            position: absolute;
+        }
+
+        .bar1:hover .expander {
+            margin-top: -294px;
+            height: 280px;
+            display: block;
+        }
+
+        .bar1 div.label {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .maprectout {
+            margin: 1px 3px;
+            display: inline-block;
+            background: #ffcc33;
+            border: 3px outset;
+            cursor: pointer;
+            color: black;
+            font-size: 14px;
+        }
+
+        .maprect {
+            width: 49px;
+            height: 20px;
+        }
+
+        .maprect.off {
+            background: #996600;
+        }
+
+        .maprect.big {
+            width: 231px;
+        }
+
+        .maprect.larger {
+            margin: 14px 0;
+        }
+
+        .maprect.giant {
+            padding: 28px 0 70px 0;
+            font-size: 17px;
+            line-height: 210%;
+        }
+        @media (max-width: 599px) {
+            body.fullscreen .bar1 div.label {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 479px) {
+            body.fullscreen .bar1 div.label {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 359px) {
+            body.fullscreen .bar1 div.label {
+                font-size: 11px;
+            }
+        }
+
+        .logo {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 479px) {
+            .logo {
+                max-width: 120%;
+                margin-bottom: 15px;
+            }
+        }
+    </style>    <title>Gra online Super Mario Bros.</title>
+    <meta name="description" content="Zagraj w oryginalną grę online Super Mario Bros. W dowolnej przeglądarce lub na dowolnym urządzeniu mobilnym.">
+</head>
+    <body onload="start()" class="mt-2">
+<div class="w-100 justify-content-center">
+    <div class="layout container w-75 pt-5" itemscope="" itemtype="https://schema.org/Game">
+    <header>
+        <div>
+            <div class="d-flex align-items-center topbar">
+                <img src="./PolskiMario_files/logo.png" alt="supermario-game.com" title="Super Mario Brothers" class="logo">
+                <!--h1 class="mb-2 fluid-heading topbar__heading">
+                    Super Mario Brothers                </h1-->
+            </div>
+            <nav class="main-menu"><br>
+    <a href="https://supermario-game.com/pl">STRONA STARTOWA</a>
+    <span class="divider"></span>
+    <a href="https://supermario-game.com/pl/gameplay">ZASADY GRY</a>
+    <span class="divider"></span>
+    <a href="https://supermario-game.com/pl/history">HISTORIA</a>
+    <span class="divider"></span>
+    <a href="https://supermario-game.com/pl/media">TAPETY</a>
+    <span class="divider"></span>
+    <a href="https://supermario-game.com/pl/contact">KONTAKT</a>
+</nav><hr>
+            <p class="mt-3 text-center">
+                Zagraj w grę online Super Mario Bros! <br>Możesz wybrać jeden z 32 poziomów lub wygenerować losową mapę. Miłego grania!<br><br>Użyj klawiszy <strong>W, A, S, D</strong> lub strzałek <strong>[↑ → ↓ ←]</strong> do sterowania Mario, aby podskoczyć przytrzymaj klawisz. <br>Użyj <strong>Shift/CTRL</strong> aby Strzelać/Biec. <strong>P</strong> - pauza, <strong>M</strong> - wycisz.            </p>
+        </div>
+    </header>
+    <main>
+            <div id="mc-container">
+                <iframe data-src-desk="mario-game/mario.html" data-src-mob="mario-game/mobilemario.html" loading="lazy" id="game" src="./PolskiMario_files/mario.html"></iframe>
+                <script>
+                    var iframe = document.getElementById('game'), src = iframe.getAttribute('data-src-desk');
+                    if (window.innerWidth < 991) {
+                        src = iframe.getAttribute('data-src-mob');
+                        iframe.setAttribute('class', 'mobilegame');
+                    }
+                    iframe.setAttribute('src', src);
+                    iframe.contentWindow.focus();
+                </script>
+                <div id="after" class="padding-15">
+
+                    <div id="out_mapselect" class="bar1">
+                        <div class="label"><img src="./PolskiMario_files/map_icon.png" width="16" alt=""> Wybór mapy</div>
+                        <div id="in_mapselect" class="expander"><div class="maprectout"><div id="maprect1,1" class="maprect" onclick="setGameMap(1,1)">1-1</div></div><div class="maprectout"><div id="maprect1,2" class="maprect" onclick="setGameMap(1,2)">1-2</div></div><div class="maprectout"><div id="maprect1,3" class="maprect" onclick="setGameMap(1,3)">1-3</div></div><div class="maprectout"><div id="maprect1,4" class="maprect" onclick="setGameMap(1,4)">1-4</div></div><div class="maprectout"><div id="maprect2,1" class="maprect" onclick="setGameMap(2,1)">2-1</div></div><div class="maprectout"><div id="maprect2,2" class="maprect" onclick="setGameMap(2,2)">2-2</div></div><div class="maprectout"><div id="maprect2,3" class="maprect" onclick="setGameMap(2,3)">2-3</div></div><div class="maprectout"><div id="maprect2,4" class="maprect" onclick="setGameMap(2,4)">2-4</div></div><div class="maprectout"><div id="maprect3,1" class="maprect" onclick="setGameMap(3,1)">3-1</div></div><div class="maprectout"><div id="maprect3,2" class="maprect" onclick="setGameMap(3,2)">3-2</div></div><div class="maprectout"><div id="maprect3,3" class="maprect" onclick="setGameMap(3,3)">3-3</div></div><div class="maprectout"><div id="maprect3,4" class="maprect" onclick="setGameMap(3,4)">3-4</div></div><div class="maprectout"><div id="maprect4,1" class="maprect" onclick="setGameMap(4,1)">4-1</div></div><div class="maprectout"><div id="maprect4,2" class="maprect" onclick="setGameMap(4,2)">4-2</div></div><div class="maprectout"><div id="maprect4,3" class="maprect" onclick="setGameMap(4,3)">4-3</div></div><div class="maprectout"><div id="maprect4,4" class="maprect" onclick="setGameMap(4,4)">4-4</div></div><div class="maprectout"><div id="maprect5,1" class="maprect" onclick="setGameMap(5,1)">5-1</div></div><div class="maprectout"><div id="maprect5,2" class="maprect" onclick="setGameMap(5,2)">5-2</div></div><div class="maprectout"><div id="maprect5,3" class="maprect" onclick="setGameMap(5,3)">5-3</div></div><div class="maprectout"><div id="maprect5,4" class="maprect" onclick="setGameMap(5,4)">5-4</div></div><div class="maprectout"><div id="maprect6,1" class="maprect" onclick="setGameMap(6,1)">6-1</div></div><div class="maprectout"><div id="maprect6,2" class="maprect" onclick="setGameMap(6,2)">6-2</div></div><div class="maprectout"><div id="maprect6,3" class="maprect" onclick="setGameMap(6,3)">6-3</div></div><div class="maprectout"><div id="maprect6,4" class="maprect" onclick="setGameMap(6,4)">6-4</div></div><div class="maprectout"><div id="maprect7,1" class="maprect" onclick="setGameMap(7,1)">7-1</div></div><div class="maprectout"><div id="maprect7,2" class="maprect" onclick="setGameMap(7,2)">7-2</div></div><div class="maprectout"><div id="maprect7,3" class="maprect" onclick="setGameMap(7,3)">7-3</div></div><div class="maprectout"><div id="maprect7,4" class="maprect" onclick="setGameMap(7,4)">7-4</div></div><div class="maprectout"><div id="maprect8,1" class="maprect" onclick="setGameMap(8,1)">8-1</div></div><div class="maprectout"><div id="maprect8,2" class="maprect" onclick="setGameMap(8,2)">8-2</div></div><div class="maprectout"><div id="maprect8,3" class="maprect" onclick="setGameMap(8,3)">8-3</div></div><div class="maprectout"><div id="maprect8,4" class="maprect" onclick="setGameMap(8,4)">8-4</div></div><div class="maprectout"><div class="maprect big " onclick="setGameMapRandom()">Map Generator!</div></div></div>
+                    </div>
+
+                    <div id="out_editor" class="bar1" style="display: none;">
+                        <div class="label">- Edytor poziomu -</div>
+                        <div id="in_editor" class="expander">Why use Nintendo's?<br><div class="maprectout"><div class="maprect big giant" onclick="startEditor()">Make your<br>own levels!</div></div><br>You can save these as text files when you're done.</div>
+                    </div>
+
+                    <div id="out_options" class="bar1" style="display: none;">
+                        <div class="label">- Ustawienia -</div>
+                        <div id="in_options" class="expander"><div class="maprectout" onclick="toggleGame(&quot;Mute&quot;)"><div class="maprect big larger">Toggle Mute</div></div><br><div class="maprectout" onclick="toggleGame(&quot;Luigi&quot;)"><div class="maprect big larger">Toggle Luigi</div></div><br><div class="maprectout" onclick="toggleGame(&quot;FastFWD&quot;)"><div class="maprect big larger">Toggle FastFWD</div></div><br><br>More coming soon!</div>
+                    </div>
+                    
+                       <div id="out_mapselect" class="bar1">
+                        <div class="label"><a href="https://supermario-game.com/pl/fullscreen"><img src="./PolskiMario_files/fullscreen.png" width="16" alt=""> Cały ekran</a></div>
+                       
+                    </div>
+
+                    <div id="sound-toggle" class="bar1">
+                        <div class="label"><img src="./PolskiMario_files/sound_on_icon.png" width="16" alt=""> Wł. dźwięk</div>
+                    </div>
+
+                    <div id="on-button" style="display: none"><img src="./PolskiMario_files/sound_on_icon.png" width="16" alt=""> Wł. dźwięk</div>
+                    <div id="off-button" style="display: none"><img src="./PolskiMario_files/sound_off_icon.png" width="16" alt=""> Wył. dźwięk</div>
+
+                    <div id="out_keymapping" class="bar1" style="display: none;">
+                        <div class="label">- Mapowanie klawiszy -</div>
+                        <div id="in_keymapping" class="expander"><div class="maprectout"><div class="maprect big larger">Up<input onkeydown="setKey(event)" type="texte" id="up" readonly=""></div></div><br><div class="maprectout"><div class="maprect big larger">Down<input onkeydown="setKey(event)" type="texte" id="down" readonly=""></div></div><br><div class="maprectout"><div class="maprect big larger">Left<input onkeydown="setKey(event)" type="texte" id="left" readonly=""></div></div><br><div class="maprectout"><div class="maprect big larger">Right<input onkeydown="setKey(event)" type="texte" id="right" readonly=""></div></div><br><div class="maprectout"><div class="maprect big larger">Sprint<input onkeydown="setKey(event)" type="texte" id="sprint" readonly=""></div></div><br><div class="maprectout"><div class="maprect big larger">Pause<input onkeydown="setKey(event)" type="texte" id="pause" readonly=""></div></div><br><div class="maprectout"><div class="maprect big larger">Mute<input onkeydown="setKey(event)" type="texte" id="mute" readonly=""></div></div><br><br></div>
+                    </div>
+
+                </div>
+            </div>
+
+<!-- Composite End -->
+
+          <article itemprop="description" class="description">
+            <meta itemprop="language" itemtype="https://schema.org/Language" data-lang="pl">
+
+            <section class="p-4">
+              <h2 class="mb-4 fluid-heading">
+                HISTORIA              </h2>
+              <div class="text-justify">
+                <img class="m-3" src="./PolskiMario_files/gp1-2.jpg" style="float: right">
+                <div><p>Niewiele jest gier, istniejących w zbiorowej świadomości przez dziesięciolecia i łączących różne pokolenia. Jedną (jak nie jedyną!) z takich jest gra <b>Super Mario</b> która w tej dziedzinie zajmuje specjalne miejsce.</p><p>Najprawdopodobniej nie ma takiej osoby na świecie, która nie słyszałaby o włoskim hydrauliku w kombinezonie, który ma na imię Mario. Zapewne znajdzie się ktoś, kto nigdy nie zagrał w tę grę i nie jest świadomy jej skromnych początków, ale, tak czy inaczej, słyszał o samym Mario.</p><p>W swoim debiutowym występie Mario nawet nie był główną postacią gry. Do tego nawet nie był hydraulikiem i nie miał na imię Mario. Po raz pierwszy pojawił się w 1981 roku w przełomowej dla tych czasów grze zręcznościowej „Donkey Kong”. Postać miała na imię <b>Jumpman</b> i była <b>stolarzem</b>. </p><p>Więcej o grze Mario i jej ewolucji przeczytasz <a href="https://supermario-game.com/pl/history">tutaj</a>.</p></div>
+              </div>
+            </section>
+            <section class="p-4" id="gameplay">
+              <h2 class="mb-4 fluid-heading">
+                ZASADY GRY              </h2>
+              <div class="text-justify">
+                <img class="m-3" src="./PolskiMario_files/gp.png" style="float: left">
+                <div data-t="paragraph2.text">
+                  <p> W czasie gry gracz wciela się w postać Mario, którego celem jest przejść przez Królestwo Grzybów. Gracz musi przetrwać ataki sił Bowsera — czarnego charakteru i ocalić księżniczkę Toadstool. To win the game, Żeby wygrać grę, Mario musi <b>dotrzeć do chorągiewki</b> pojawiającej się na końcu każdego poziomu. </p> <p> Po świecie gry rozrzucone są monety, które należy zbierać. Pod cegłami oznaczonymi znakiem zapytania ukryte są również monety lub specjalne przedmioty, w cegły te należy uderzyć. Jeśli wystarcza czasu, należy uderzać we wszystkie cegły, gdyż mogą one skrywać rzadkie przedmioty lub monety. </p> <p>Po zjedzeniu muchomora zwykły Mario zamienia się w Super Mario, co oznacza, że postać powiększa się dwukrotnie, zyskując możliwość niszczenia cegiełek nad sobą. Należy uważać, gdyż w tym trygie jeśli Mario zostanie uderzony,  wraca do początkowej wielkości, jednak postać nie umiera.</p> <p>Więcej o zasadach gry <a href="https://supermario-game.com/pl/gameplay">tutaj</a>.</p>                </div>
+              </div>
+            </section>
+          
+          </article>
+
+      
+</main>
+
+<footer>
+    <div class="mt-5 mb-3 d-flex align-items-center justify-content-between">
+        <div>© 2022 - Super Mario Bros Online. Informacje o grze oraz kod źródłowy pochodzą z otwartych źródeł.</div>
+        <div>
+
+            <div class="dropdown">
+    <a class="change-lang" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="https://supermario-game.com/pl#">
+        <span class="flag-icon flag-icon-pl"></span>
+        <span>language</span>
+    </a>
+    <div class="dropdown-menu language-list" aria-labelledby="dropdownMenuButton">
+            
+    <a class="link dropdown-item " href="https://supermario-game.com/de" itemprop="availableLanguage" itemscope="" itemtype="http://schema.org/Language">
+        <span class="flag-icon flag-icon-de "></span>
+        <span itemprop="name"> Deutsche </span>
+    </a>
+      
+          
+    <a class="link dropdown-item " href="https://supermario-game.com/el" itemprop="availableLanguage" itemscope="" itemtype="http://schema.org/Language">
+        <span class="flag-icon flag-icon-gr "></span>
+        <span itemprop="name"> Ελληνικά </span>
+    </a>
+      
+          
+    <a class="link dropdown-item " href="https://supermario-game.com/" itemprop="availableLanguage" itemscope="" itemtype="http://schema.org/Language">
+        <span class="flag-icon flag-icon-us "></span>
+        <span itemprop="name"> English </span>
+    </a>
+      
+          
+    <a class="link dropdown-item " href="https://supermario-game.com/es" itemprop="availableLanguage" itemscope="" itemtype="http://schema.org/Language">
+        <span class="flag-icon flag-icon-es "></span>
+        <span itemprop="name"> Español </span>
+    </a>
+      
+          
+    <a class="link dropdown-item " href="https://supermario-game.com/fr" itemprop="availableLanguage" itemscope="" itemtype="http://schema.org/Language">
+        <span class="flag-icon flag-icon-fr "></span>
+        <span itemprop="name"> Français </span>
+    </a>
+      
+          
+    <a class="link dropdown-item " href="https://supermario-game.com/it" itemprop="availableLanguage" itemscope="" itemtype="http://schema.org/Language">
+        <span class="flag-icon flag-icon-it "></span>
+        <span itemprop="name"> Italiano </span>
+    </a>
+      
+          
+    <a class="link dropdown-item " href="https://supermario-game.com/nl" itemprop="availableLanguage" itemscope="" itemtype="http://schema.org/Language">
+        <span class="flag-icon flag-icon-nl "></span>
+        <span itemprop="name"> Nederlands </span>
+    </a>
+      
+          
+    <a class="link dropdown-item active" href="https://supermario-game.com/pl" itemprop="availableLanguage" itemscope="" itemtype="http://schema.org/Language">
+        <span class="flag-icon flag-icon-pl "></span>
+        <span itemprop="name"> Polski </span>
+    </a>
+      
+          
+    <a class="link dropdown-item " href="https://supermario-game.com/pt" itemprop="availableLanguage" itemscope="" itemtype="http://schema.org/Language">
+        <span class="flag-icon flag-icon-br "></span>
+        <span itemprop="name"> Português </span>
+    </a>
+      
+          
+    <a class="link dropdown-item " href="https://supermario-game.com/ru" itemprop="availableLanguage" itemscope="" itemtype="http://schema.org/Language">
+        <span class="flag-icon flag-icon-ru "></span>
+        <span itemprop="name"> Русский </span>
+    </a>
+      
+          
+    <a class="link dropdown-item " href="https://supermario-game.com/tr" itemprop="availableLanguage" itemscope="" itemtype="http://schema.org/Language">
+        <span class="flag-icon flag-icon-tr "></span>
+        <span itemprop="name"> Türkçe </span>
+    </a>
+      
+          
+    <a class="link dropdown-item " href="https://supermario-game.com/vi" itemprop="availableLanguage" itemscope="" itemtype="http://schema.org/Language">
+        <span class="flag-icon flag-icon-vn "></span>
+        <span itemprop="name"> Tiếng Việt </span>
+    </a>
+      
+          </div>
+</div>
+        </div>
+    </div>
+
+    <br>
+
+</footer>
+</div>
+</div>
+
+<script src="./PolskiMario_files/jquery.min.js.pobrane"></script>
+<script src="./PolskiMario_files/ui.js.pobrane"></script>
+<script>
+    // document.onload()
+    document.body.addEventListener(
+        "keydown",
+        function(event) {
+            if (event.keyCode === 32 && event.target === document.body) {
+                event.preventDefault();
+            }
+        },
+        false
+    );
+</script>
+<!--LiveInternet counter--><a href="https://www.liveinternet.ru/click" target="_blank"><img id="licnt3959" width="1" height="1" style="border:0" title="LiveInternet" src="./PolskiMario_files/hit" alt=""></a><script>(function(d,s){d.getElementById("licnt3959").src=
+"https://counter.yadro.ru/hit?t38.3;r"+escape(d.referrer)+
+((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+(s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+";h"+escape(d.title.substring(0,150))+";"+Math.random()})
+(document,screen)</script><!--/LiveInternet-->
+
+
+
+</body></html>
